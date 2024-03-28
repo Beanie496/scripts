@@ -55,12 +55,14 @@ else
 	base=master
 	base_cmd=$sprt_dir/$base
 	cd $root_dir
+	branch=$(git branch --show-current)
 	git checkout $1
 	cargo build --release
 	mv -f $root_dir/target/release/crab $sprt_dir/$new
 	git checkout master
 	cargo build --release
 	mv -f $root_dir/target/release/crab $sprt_dir/$base
+	git checkout branch
 fi
 
 cutechess-cli \
