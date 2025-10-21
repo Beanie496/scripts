@@ -1,0 +1,2 @@
+#!/bin/sh
+doas wg-quick down vpn-nl

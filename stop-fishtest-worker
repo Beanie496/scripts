@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd $HOME/coding/repositories/fishtest/worker
+touch fish.exit

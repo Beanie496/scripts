@@ -1,0 +1,16 @@
+#!/bin/sh
+
+threads=8
+
+while getopts "T:" option
+do
+    case $option in
+        T) threads=$OPTARG ;;
+    esac
+done
+
+PASSWORD_STORE_CLIP_TIME=1 pass -c tests.stockfish.org
+password=$(xclip -o -sel clipboard)
+
+cd $HOME/coding/repositories/fishtest/worker
+python3 worker.py Beanie $password -c $threads -m 16384
