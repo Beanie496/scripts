@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mlp_episodes=~/coding/scripts/mlp-episodes
+total_lines=$(wc -l < $mlp_episodes)
+random_line_num=$((($RANDOM % $total_lines) + 1))
+random_line=$(head -$random_line_num $mlp_episodes | tail -1)
+
+notify-send "mlp episode" "$random_line"

@@ -1,0 +1,5 @@
+#!/bin/dash
+
+xrandr --output eDP-1 --auto --output HDMI-1 --off
+pactl set-card-profile alsa_card.pci-0000_05_00.1 off
+pactl set-card-profile alsa_card.pci-0000_05_00.6 output:analog-stereo+input:analog-stereo

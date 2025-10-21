@@ -1,0 +1,10 @@
+#!/bin/dash
+
+
+files=
+
+for file in $(ls $1); do
+	files="$files$file;"
+done
+
+naps2 console -i "$files" -n 0 --rotate 90 -o scanned.pdf

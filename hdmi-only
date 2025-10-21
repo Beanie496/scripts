@@ -1,0 +1,5 @@
+#!/bin/dash
+
+xrandr --output eDP-1 --off --output HDMI-1 --rate 60.0 --mode 1920x1080
+pactl set-card-profile alsa_card.pci-0000_05_00.6 off
+pactl set-card-profile alsa_card.pci-0000_05_00.1 output:hdmi-surround
